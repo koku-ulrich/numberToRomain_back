@@ -14,6 +14,11 @@ Project is created with:
 ## Setup
 This project uses ```node.js``` and ```yarn``` as the dependency manager.
 
+### Branch info
+- In ```main``` branch you have both implementation (normal add SSE)
+- In ```issue-3-server-rest``` branch you normal implementation
+
+
 First install the project dependencies : ```yarn install``` and run with ```yarn serve```
 
 
