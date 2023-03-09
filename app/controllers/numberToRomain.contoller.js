@@ -39,6 +39,7 @@ const function_convert = (number) => {
     });
 };
 
+// exports numberToRomain function
 exports.numberToRomain = (req, res) => {
     // convert string to int
     function_convert(parseInt(req.body.number)).then((value) => {
@@ -50,5 +51,20 @@ exports.numberToRomain = (req, res) => {
             message : "Some error occurred!. Please try again"
         });
     });
+};
+
+// exports initSSe function
+exports.initSSE = (req, res) => {
+    res.initStream();
+};
+
+// exports numberToRomain with sse
+exports.numberToRomainSSE = async (req, res) => {
+    // convert string to int
+    let value = await function_convert(parseInt(req.body.number)).then((value) => {
+        return value
+    });
+    res.status(200).json({id: req.body.number});
+    res.sendSSE(JSON.stringify(value), 'number-to-romain')
 };
 

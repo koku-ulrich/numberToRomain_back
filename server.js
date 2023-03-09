@@ -24,6 +24,7 @@ app.get("/", (req, res) => {
 
 // import of other routes
 require("./app/routes/numberToRomain.route.js")(app);
+require("./app/routes/sse.route.js")(app);
 
 // set port, listen for requests
 const PORT = process.env.NODE_PORT;
